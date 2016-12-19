@@ -85,33 +85,27 @@
 
 
 <meta name="description" content="登录邮箱密码账号:ThreeMonkeyiOSS@163.com 密码:123bB123
-
 githup 帐号userName：threeMonkeyIPC  帐号：ThreeMonkeyiOS@163.com 密码：123bB123
 Repository name：threeMonkeyIPC.github.io
 http://threeMonkeyIPC.github.io
-
-生成多个git">
+生成多个git ss">
 <meta property="og:type" content="article">
 <meta property="og:title" content="博客搭建">
-<meta property="og:url" content="http://yoursite.com/2016/12/18/iOS团队博客搭建/index.html">
+<meta property="og:url" content="http://yoursite.com/2016/12/19/iOS团队博客搭建/index.html">
 <meta property="og:site_name" content="三只小猴">
 <meta property="og:description" content="登录邮箱密码账号:ThreeMonkeyiOSS@163.com 密码:123bB123
-
 githup 帐号userName：threeMonkeyIPC  帐号：ThreeMonkeyiOS@163.com 密码：123bB123
 Repository name：threeMonkeyIPC.github.io
 http://threeMonkeyIPC.github.io
-
-生成多个git">
-<meta property="og:updated_time" content="2016-12-18T12:59:36.000Z">
+生成多个git ss">
+<meta property="og:updated_time" content="2016-12-19T02:27:40.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="博客搭建">
 <meta name="twitter:description" content="登录邮箱密码账号:ThreeMonkeyiOSS@163.com 密码:123bB123
-
 githup 帐号userName：threeMonkeyIPC  帐号：ThreeMonkeyiOS@163.com 密码：123bB123
 Repository name：threeMonkeyIPC.github.io
 http://threeMonkeyIPC.github.io
-
-生成多个git">
+生成多个git ss">
 
 
 
@@ -139,7 +133,7 @@ http://threeMonkeyIPC.github.io
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/12/18/iOS团队博客搭建/"/>
+  <link rel="canonical" href="http://yoursite.com/2016/12/19/iOS团队博客搭建/"/>
 
 
 
@@ -276,7 +270,7 @@ http://threeMonkeyIPC.github.io
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/12/18/iOS团队博客搭建/">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/12/19/iOS团队博客搭建/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="三只小猴">
@@ -313,8 +307,8 @@ http://threeMonkeyIPC.github.io
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-18T20:50:48+08:00">
-                2016-12-18
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-19T10:27:40+08:00">
+                2016-12-19
               </time>
             
 
@@ -350,12 +344,33 @@ http://threeMonkeyIPC.github.io
 
       
         <h1 id="登录邮箱密码"><a href="#登录邮箱密码" class="headerlink" title="登录邮箱密码"></a>登录邮箱密码</h1><p>账号:ThreeMonkeyiOSS@163.com 密码:123bB123</p>
-<hr>
 <h1 id="githup-帐号"><a href="#githup-帐号" class="headerlink" title="githup 帐号"></a>githup 帐号</h1><p>userName：threeMonkeyIPC  帐号：ThreeMonkeyiOS@163.com 密码：123bB123</p>
 <p>Repository name：threeMonkeyIPC.github.io</p>
 <p><a href="http://threeMonkeyIPC.github.io" target="_blank" rel="external">http://threeMonkeyIPC.github.io</a></p>
-<hr>
-<h2 id="生成多个git-ssh密钥"><a href="#生成多个git-ssh密钥" class="headerlink" title="生成多个git ssh密钥"></a>生成多个git ssh密钥</h2>
+<h2 id="生成多个git-ssh密钥"><a href="#生成多个git-ssh密钥" class="headerlink" title="生成多个git ssh密钥"></a>生成多个git ssh密钥</h2><hr>
+<p><em>由于同时存在多个git帐号，所以这里为了避免帐号冲突，所以我们需要配置~/.ssh/config文件</em></p>
+<ul>
+<li><p>用ssh-keygen命令生成一组新的id_rsa_new和id_rsa_new.pub.  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"> ssh-keygen -t rsa -C <span class="string">"threeMonkeyIPC.github.io"</span></div><div class="line"> ```  </div><div class="line"> </div><div class="line">* 配置~/.ssh/config文件  </div><div class="line"></div><div class="line"> ``` bash</div><div class="line"> Host githup.com</div><div class="line">        HostName githup.com</div><div class="line">        User git </div><div class="line">        IdentityFile ~/.ssh/id_rsa_githup</div></pre></td></tr></table></figure>
+<p>Host就是每个SSH连接的单独代号，这里可以起一个方便记得名字，IdentityFile告诉SSH连接去读取哪个私钥。</p>
+</li>
+<li><p>增加新的私钥。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh-add ~/.ssh/id_rsa_new</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li>测试配置文件是否正常<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh -T git@gitcafe.com</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><em>遇到的问题</em></p>
+<ul>
+<li>SSH连接报错 Bad owner or permissions</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">chmod 600*</div></pre></td></tr></table></figure>
+<ul>
+<li>Permission denied (publickey)</li>
+</ul>
+
       
     </div>
 
